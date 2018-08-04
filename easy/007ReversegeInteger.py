@@ -4,6 +4,9 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        # 判断正负号，因为//处理负数是往下取
+        # 每次对x处以10，对result乘以10再加上余数保存
+        # 判断结果是否超出2**31
         result = 0
         sig = 1
         if x < 0:
