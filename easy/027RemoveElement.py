@@ -13,3 +13,8 @@ class Solution:
                 index += 1
         
         return index
+
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+x = Solution().removeElement(nums, val)
+print(x)
