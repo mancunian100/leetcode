@@ -1,15 +1,19 @@
 class Solution:
-    def addDigits(self, num):
+    def isUgly(self, num):
         """
         :type num: int
-        :rtype: int
+        :rtype: bool
         """
-        # 两层循环
-        while num // 10 > 0:
-            s = 0
-            while num:
-                s += (num % 10)
-                num //= 10
-            num = s
-        return num
-            
+        # 就是无脑除以2，3，5，最后判断余数是不是1
+        if num < 1:
+            return False
+        while not num % 2:
+            num /= 2
+        while not num % 3:
+            num /= 3
+        while not num % 5:
+            num /= 5
+        if num == 1:
+            return True
+        else:
+            return False
