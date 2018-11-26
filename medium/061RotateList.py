@@ -61,24 +61,20 @@ class Solution:
         :type k: int
         :rtype: ListNode
         """
-        p = head
-        N = 1
-        if p == None:
-            return None
+        p, p.next, N = ListNode(0), head, 0
         while(p.next):
             N += 1
             p = p.next
-        if N < 2:
-            return head
-        p.next = head
-        p = p.next
-        count = 1
-        while(count < N-k%N):
+        if N > 0:
+            p.next = head
             p = p.next
-            count += 1
-        res = p.next
-        p.next = None
-        return res
+            count = 1
+            while(count < N-k%N):
+                p = p.next
+                count += 1
+            head = p.next
+            p.next = None
+        return head
 
 
 
@@ -90,7 +86,7 @@ a = a.next
 a.next = ListNode(4)
 a = a.next
 a.next = ListNode(5)
-k = 2
+k = 1
 
 s = Solution()
 b = s.rotateRight(r, k)
