@@ -1,5 +1,6 @@
 # 当移动到要反转的范围时用reverse临时保存，最后出来时插进去
 # 和easy的反转链表一样，我还没有完全掌握python的复制引用的规律
+# 这里还要注意要使用前置的dummyNode作为返回值
 class Solution:
     def reverseBetween(self, head, m, n):
         """
@@ -9,6 +10,7 @@ class Solution:
         :rtype: ListNode
         """
         p, p.next = ListNode(0), head
+        dummyNode = p
         reverse = None
         count = 0
         while(p.next):
@@ -27,4 +29,4 @@ class Solution:
                     break
             else:
                 p = p.next
-        return head
+        return dummyNode.next
