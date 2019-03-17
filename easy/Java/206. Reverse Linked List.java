@@ -1,4 +1,4 @@
-package Java;
+package javaEasy;
 
 /**
  * @author mancunian100.
@@ -6,27 +6,39 @@ package Java;
 
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode sentinel = new ListNode(0);
-        sentinel.next = head;
-        ListNode p = head;
 
-        while (p != null && p.next != null) {
-            ListNode temp1 = p.next;
-            p.next = p.next.next;
-            ListNode temp2 = sentinel.next;
-            sentinel.next = temp1;
-            sentinel.next.next = temp2;
+        /** 插入到sentinel之后，第一个之前 */
+//        ListNode sentinel = new ListNode(0);
+//        sentinel.next = head;
+//        ListNode p = head;
+//
+//        while (p != null && p.next != null) {
+//            ListNode temp1 = p.next;
+//            p.next = p.next.next;
+//            ListNode temp2 = sentinel.next;
+//            sentinel.next = temp1;
+//            sentinel.next.next = temp2;
+//        }
+//
+//        return sentinel.next;
+
+        /** 逐个反转箭头指向 */
+        ListNode reverse = null;
+        while (head != null) {
+            ListNode temp = head.next;
+            head.next = reverse;
+            reverse = head;
+            head = temp;
         }
-
-        return sentinel.next;
+        return reverse;
     }
 
-    public static void main(String Args[]) {
+    public static void main(String[] args) {
         ListNode test = new ListNode(1);
         ListNode p = test;
         for (int i = 0; i < 4; i += 1) {
-             p.next = new ListNode(i + 2);
-             p = p.next;
+            p.next = new ListNode(i + 2);
+            p = p.next;
         }
 
         ListNode pTest = test;
