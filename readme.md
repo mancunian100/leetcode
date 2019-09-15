@@ -1,5 +1,27 @@
 ## Collections of techniques and templates of solving leetcode problems
 
+### Java String manipulation
+- String and Integer
+```
+String s1;
+Integer n1;
+
+n1 = Integer.parseInt(s1);
+
+s1 = String.valueOf(n1);
+s1 = Integer.toString(n1);
+```
+
+- String StringBuilder
+```
+
+```
+
+- determine two Strings are equal
+```
+s1.equals(s2);
+```
+
 ### Java language templates
 
 - priority queue
@@ -18,10 +40,54 @@ Arrays.sort(arr, Comparator<Integer>() {
     }
 });
 ```
+- iterate a hashmap
+```
+Map<String, Integer> map = new HashMap<>();
+for (Entry<String, Integer> entry : map.entrySet()) {
+    entry.getKey();
+    entry.getValue();
+}
+
+for (String key : map.keySet()) {
+    map.get(key);
+}
+```
 
 ### binary search
 - bs template
 ```
+
+```
+
+### union find
+- union find template
+```
+List<Integer> father;
+
+public int find(int i) {
+    int res = father.get(i);
+    if (i != res) {
+        res = find(father.get(i));
+        father.set(i, res);
+    }
+    return res;
+}
+
+public void connect(int a, int b) {
+    if (find(a) != find(b)) {
+        father.set(find(b), find(a));
+    }
+}
+
+public boolean isConnected(int a ,int b) {
+    return find(a) == find(b);
+}
+
+// initialize
+father = new ArrayList<>();
+for (int i = 0; i < n; i ++) {
+    father.add(i);
+}
 
 ```
 
