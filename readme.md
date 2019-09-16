@@ -43,6 +43,7 @@ Arrays.sort(arr, Comparator<Integer>() {
 - iterate a hashmap
 ```
 Map<String, Integer> map = new HashMap<>();
+
 for (Entry<String, Integer> entry : map.entrySet()) {
     entry.getKey();
     entry.getValue();
