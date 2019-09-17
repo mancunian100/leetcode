@@ -14,7 +14,16 @@ s1 = Integer.toString(n1);
 
 - String StringBuilder
 ```
+String s1;
+StringBuilder sb;
 
+sb = new StringBuilder(s1);
+
+sb.charAt(i);
+
+sb.toString();
+
+sb.append(s);
 ```
 
 - determine two Strings are equal
@@ -44,7 +53,7 @@ Arrays.sort(arr, Comparator<Integer>() {
 ```
 Map<String, Integer> map = new HashMap<>();
 
-for (Entry<String, Integer> entry : map.entrySet()) {
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
     entry.getKey();
     entry.getValue();
 }
@@ -57,7 +66,18 @@ for (String key : map.keySet()) {
 ### binary search
 - bs template
 ```
-
+// in left part, find the right end if left part
+while (l < r) {
+    int mid = l + r >> 1;
+    if (check(mid)) r = mid;
+    else l = mid + 1;
+}
+// in right part, find the left end of right part
+while (l < r) {
+    int mid = l + r + 1 >> 1;
+    if (check(mid)) l = mid;
+    else r = mid - 1;
+}
 ```
 
 ### union find
@@ -102,4 +122,16 @@ int[] dx = {0, 1, 0, -1};
 int[] dy = {1, 0, -1, 0};
 int dir = 0;
 dir = (dir + 1) % 4;
+```
+
+### pay attention
+- while loop
+```
+while (l < r && check())
+
+while (i < nums.length && check())
+```
+### implement queue
+```
+Queue<> q = new LinkedList<>();
 ```
