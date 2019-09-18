@@ -72,6 +72,15 @@ for (String key : map.keySet()) {
     map.get(key);
 }
 ```
+- List and array convert
+```
+List<int[]> arr = new ArrayList<>();
+int[][] n = (int[][]) arr.toArray(new int[arr.size()][]);
+
+int[] nums = new int[n];
+List<Integer> list = Arrays.asList(nums);
+```
+
 
 ### binary search
 - bs template
