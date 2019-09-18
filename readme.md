@@ -29,6 +29,16 @@ sb.append(s);
 - determine two Strings are equal
 ```
 s1.equals(s2);
+
+```
+- Arrays
+```
+// fill
+int[] nums = new int[n];
+Arrays.fill(nums, 1);
+
+// sort, ascending order
+Arrays.sort(nums);
 ```
 
 ### Java language templates
@@ -80,6 +90,29 @@ while (l < r) {
 }
 ```
 
+### bfs
+- use queue to store the layer
+```
+LinkedList<Integer> q = new LinkedList<>();
+
+// add
+q.addLast();
+
+// get
+q.removeFirst();
+```
+
+### bfs & dfs
+- bfs
+1. large memory
+2. without stack overflow
+3. can solve shortest, smallest
+
+- dfs
+1. linear memory
+2. maybe stack overflow
+3. cannot solve shortest, smallest
+
 ### union find
 - union find template
 ```
@@ -124,6 +157,8 @@ for (int i = 0; i < n; i ++) {
 ### complex situations
 - regular expression
 
+- whether a string is a number
+
 ### traverse the matrix
 - use dx and dy
 ```
@@ -134,13 +169,9 @@ dir = (dir + 1) % 4;
 ```
 
 ### pay attention
-- while loop
+- while loop check boundary
 ```
 while (l < r && check())
 
 while (i < nums.length && check())
-```
-### implement queue
-```
-Queue<> q = new LinkedList<>();
 ```
