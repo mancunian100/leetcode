@@ -104,6 +104,15 @@ public boolean isConnected(int a ,int b) {
     return find(a) == find(b);
 }
 
+// count the number of parts
+public int count() {
+    int res = 0;
+    for (int i = 0; i < father.size(); i ++) {
+        if (i == father.get(i)) res ++;
+    }
+    return res;
+}
+
 // initialize
 father = new ArrayList<>();
 for (int i = 0; i < n; i ++) {
