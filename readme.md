@@ -47,6 +47,7 @@ Arrays.sort(nums);
 ```
 
 ```
+
 - reverse order sort a int array
 ```
 int[] nums = {1, 2, 3};
