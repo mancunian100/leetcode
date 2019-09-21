@@ -73,6 +73,11 @@ for (String key : map.keySet()) {
     map.get(key);
 }
 ```
+- sort a hasmap
+```
+
+```
+
 - List and array convert
 ```
 List<int[]> arr = new ArrayList<>();
@@ -162,6 +167,56 @@ for (int i = 0; i < n; i ++) {
     father.add(i);
 }
 
+```
+
+### segmentTree
+```
+class stn {
+    int l, r;
+    stn left, right;
+    int sum;
+    
+    public stn(int _l, int _r) {
+        l = _l;
+        r = _r;
+        left = null;
+        right = null;
+        sum = 0;
+    }
+}
+
+stn root = null;
+
+stn build(int[] nums, int l, int r) {
+    if (l > r) return null;
+    stn node = new stn(l, r);
+    if (l == r) node.sum = nums[l];
+    else {
+        int mid = l + r >> 1;
+        node.left = build(nums, l, mid);
+        node.right = build(nums, mid+1, r);
+        node.sum = node.left.sum + node.right.sum;
+    }
+    return node;
+}
+
+void update(stn p, int pos, int val) {
+    if (p.l == p.r) p.sum = val;
+    else {
+        int mid = p.l + p.r >> 1;
+        if (pos <= mid) update(p.left, pos, val);
+        else update(p.right, pos, val);
+        p.sum = p.left.sum + p.right.sum;
+    }
+}
+
+int query(stn p, int l, int r) {
+    if (l == p.l && r == p.r) return p.sum;
+    int mid = p.l + p.r >> 1;
+    if (r <= mid) return query(p.left, l, r);
+    else if (l > mid) return query(p.right, l, r);
+    else return query(p.left, l, mid) + query(p.right, mid+1, r);
+} 
 ```
 
 ### complex situations
