@@ -45,7 +45,14 @@ Arrays.sort(nums);
 
 - priority queue
 ```
+min heap
 
+Queue<Integer> pq = new PriorityQueue<>(size, new Comparator<Integer>() {
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return o1 - o2;
+    }
+});
 ```
 
 - reverse order sort a int array
