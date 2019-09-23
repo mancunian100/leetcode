@@ -53,6 +53,10 @@ Queue<Integer> pq = new PriorityQueue<>(size, new Comparator<Integer>() {
         return o1 - o2;
     }
 });
+
+pq.add(o1);
+pq.offer(o1);
+o2 = pq.poll();
 ```
 
 - reverse order sort a int array
