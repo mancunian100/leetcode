@@ -24,6 +24,9 @@ sb.charAt(i);
 sb.toString();
 
 sb.append(s);
+
+// reverse a string
+sb.reverse();
 ```
 
 - determine two Strings are equal
