@@ -254,3 +254,10 @@ while (l < r && check())
 
 while (i < nums.length && check())
 ```
+
+### two pointers
+```
+for (int l = 0, r = 0; r < n; r ++) {
+    while (l < r && check()) l ++;
+}
+```
