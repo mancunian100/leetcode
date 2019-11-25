@@ -67,7 +67,7 @@ o2 = pq.poll();
 int[] nums = {1, 2, 3};
 Integer[] arr = new int[nums.length];
 for (int i = 0; i <n; i ++) arr[i] = nums[i];
-Arrays.sort(arr, Comparator<Integer>() {
+Arrays.sort(arr, new Comparator<Integer>() {
     @Override
     public int compare(Integer n1, Integer n2) {
         return n2 - n1;
@@ -97,8 +97,8 @@ for (String key : map.keySet()) {
 List<int[]> arr = new ArrayList<>();
 int[][] n = (int[][]) arr.toArray(new int[arr.size()][]);
 
-int[] nums = new int[n];
-List<Integer> list = Arrays.asList(nums);
+<!-- int[] nums = new int[n];
+List<Integer> list = Arrays.asList(nums); -->
 ```
 
 
